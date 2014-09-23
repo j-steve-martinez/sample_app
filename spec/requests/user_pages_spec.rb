@@ -4,8 +4,26 @@ describe "User pages" do
   let(:user) { FactoryGirl.create(:user) }
   subject { page }
 
+  describe "index" do
+    before do
+      sign_in FactoryGirl.create(:user)
+      FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
+      FactoryGirl.create(:user, name: "Ben", email: "ben@example.com")
+      visit users_path
+    end
+
+    it { should have_title('All users') }
+    it { should have_content('All users') }
+
+    it "should list each user" do
+      User.all.each do |user|
+        expect(page).to have_selector('li', text: user.name)
+      end
+    end
+  end
+
   describe "profile page" do
-    
+
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
@@ -38,7 +56,7 @@ describe "User pages" do
         fill_in "Password",     with: "password"
         fill_in "Confirmation", with: "password"
       end
- 
+
       describe "after saving the user" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
@@ -48,8 +66,8 @@ describe "User pages" do
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
     end
-  end  
-  
+  end
+
   describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
     before do
@@ -68,7 +86,7 @@ describe "User pages" do
 
       it { should have_content('error') }
     end
-    
+
     describe "with valid information" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
