@@ -3,6 +3,8 @@ require 'spec_helper'
 describe "Authentication" do
 
   subject { page }
+  it { should_not have_link('Profile') }
+  it { should_not have_link('Settings') }
 
   describe "signin" do
     before { visit signin_path }
@@ -12,6 +14,8 @@ describe "Authentication" do
 
       it { should have_title('Sign in') }
       it { should have_selector('div.alert.alert-error') }
+      it { should_not have_link('Profile') }
+      it { should_not have_link('Settings') }
     end
 
     describe "with valid information" do
@@ -28,12 +32,11 @@ describe "Authentication" do
       describe "followed by signout" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
+        it { should_not have_link('Profile') }
+        it { should_not have_link('Settings') }
       end
     end
   end
-
-
-
 
   describe "authorization" do
 
