@@ -28,7 +28,7 @@ describe "User pages" do
       end
     end
 
-     describe "delete links" do
+    describe "delete links" do
 
       it { should_not have_link('delete') }
 
@@ -79,10 +79,10 @@ describe "User pages" do
 
     describe "with valid information" do
        before do
-        fill_in "Name",         with: "user.name"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "password"
-        fill_in "Confirmation", with: "password"
+        fill_in "Name",                   with: "user.name"
+        fill_in "Email",                  with: "user@example.com"
+        fill_in "Password",               with: "password"
+        fill_in "Confirmation Password",  with: "password"
       end
 
       describe "after saving the user" do
@@ -119,10 +119,10 @@ describe "User pages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in "Name",                   with: new_name
+        fill_in "Email",                  with: new_email
+        fill_in "Password",               with: user.password
+        fill_in "Confirmation Password",  with: user.password
         click_button "Save changes"
       end
 
