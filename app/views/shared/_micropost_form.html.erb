@@ -1,7 +1,9 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :content, placeholder: "Compose new post with 140 max characters...", onkeyup: "LimtCharacters(this,140,'postcount');"%>
+    Number of Characters Left:
+    <label id="postcount" style="background-color:#E2EEF1;color:Red;font-weight:bold;">140</label>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
