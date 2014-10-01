@@ -6,3 +6,7 @@ by [Michael Hartl](http://michaelhartl.com/).
 
  
 Deployed to [Heroku](http://serene-plains-1464.herokuapp.com/)
+
+Rebranded to Chitty Chat
+
+Used for learning how to implement new features in Rails
