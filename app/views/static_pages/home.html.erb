@@ -10,6 +10,7 @@
       <section>
         <%= render 'shared/micropost_form' %>
       </section>
+      <%= link_to image_tag("chittychat_grey.gif", alt: "Chitty Chat") %>
     </aside>
     <div class="span8">
       <h3>Micropost Feed</h3>
@@ -17,18 +18,16 @@
     </div>
   </div>
 <% else %>
-  <div class="center hero-unit">
-    <h1>Welcome to the Blog-a-ton</h1>
-
-    <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path,
+    <div class="center">
+        <div class="hero-unit">
+        <h1>Welcome to Chitty Chat</h1>
+        <p>A place to chit chat with people.</p>
+        <%= link_to "Sign up now!", signup_path,
                                 class: "btn btn-large btn-primary" %>
-  </div>
-
+        or
+        <%= link_to "Sign In", signin_path,
+                                class: "btn btn-large btn-primary" %>
+        </div>
+    </div>    
   <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %>

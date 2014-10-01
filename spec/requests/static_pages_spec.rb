@@ -1,11 +1,11 @@
 require 'spec_helper'
 describe "Static pages" do
   subject { page }
-  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
+  let(:base_title) { "Chitty Chat" }
 
   describe "Home page" do
     before{ visit root_path}
-    it { should have_content('Blog-a-ton') }
+    it { should have_content('Chitty Chat') }
     it { should have_title(full_title('')) }
     it { should_not have_title('| home') }
    end

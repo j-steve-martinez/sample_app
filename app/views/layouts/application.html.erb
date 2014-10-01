@@ -17,17 +17,14 @@
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
       <%= p "Server:" , request.server_software() if Rails.env.development? %>
       <%= p "Method: ", request.request_method() if Rails.env.development? %>
       <%= p 'UUID:', request.uuid() if Rails.env.development? %>
       <%= p 'IP:', request.ip() if Rails.env.development? %>
       <%= p 'FULLPATH:', request.fullpath() if Rails.env.development? %>
-      <%= yield %>
-
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
-    </div>
-
-
-  </body>
 </html>
