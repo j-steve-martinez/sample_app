@@ -2,8 +2,8 @@
 
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
-$grayLight: #ededed;
+//$grayMediumLight: #eaeaea;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -58,7 +58,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  // //color: $grayLight; 
+  color: $grayLight; 
 }
 
 p {
@@ -70,33 +70,55 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  //color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  &:hover {
-    //color: white;
-    text-decoration: none;
+header {
+  #logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: lightgreen;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    line-height: 1;
+    &:hover {
+      color: lightblue;
+      text-decoration: none;
+    }
   }
-}
 
+  .navbar-inverse , a, #menu {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: lightgreen !important;
+    &:hover {
+      color: lightblue !important;
+      text-decoration: none;
+    }
+  }
+
+  #menu-list {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: green !important;
+    &:hover {
+      color: blue !important;
+      text-decoration: none;
+    }
+  }
+
+}
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  ////color: $grayLight;
+  border-top: 1px; //solid $grayMediumLight;
+  color: grey;
   a {
-    //color: $gray;
+    color: green;
     &:hover {
-      //color: $grayDarker;
+      color: blue;
     }
   }
   small {
@@ -153,14 +175,14 @@ aside {
     float: left;
     padding: 0 10px;
     border-left: 1px solid $grayLighter;
-    //color: gray;
+    color: gray;
     &:first-child {
       padding-left: 0;
       border: 0;
     }
     &:hover {
       text-decoration: none;
-      //color: $blue;
+      color: $blue;
     }
   }
   strong {
@@ -195,7 +217,7 @@ input {
 }
 
 #error_explanation {
-  //color: #f00;
+  color: #f00;
   ul {
     list-style: none;
     margin: 0 0 18px 0;
@@ -237,7 +259,7 @@ input {
   display: block;
 }
 .timestamp {
-  //color: $grayLight;
+  color: brown;
 }
 .gravatar {
   float: left;
